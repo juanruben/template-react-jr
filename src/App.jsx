@@ -1,30 +1,17 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { setTranslations, setDefaultLanguage, translate } from 'react-switch-lang';
+import React from 'react';
+import { Provider } from 'react-redux';
+import store from './redux/store';
+
+import Language from './components/Language';
+import TestComponent from './components/TestComponent';
+
 import './App.scss';
 
-import es from './languages/es.json';
-import en from './languages/en.json';
+const App = () => (
+    <Provider store={store}>
+        <Language />
+        <TestComponent />
+    </Provider>
+);
 
-class App extends Component {
-    constructor(props) {
-        super(props);
-        setTranslations({ es, en });
-        setDefaultLanguage('en');
-    }
-
-    render() {
-        const { t } = this.props;
-        return (
-            <div className="app">
-                {t('app.text')}
-            </div>
-        );
-    }
-}
-
-App.propTypes = {
-    t: PropTypes.func.isRequired,
-};
-
-export default translate(App);
+export default App;
