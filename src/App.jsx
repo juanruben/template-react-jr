@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import store, { saveState } from './redux/store';
 
-import Language from './components/Language';
-import TestComponent from './components/TestComponent';
+import AppRouter from './AppRouter';
 
 import './App.scss';
 
@@ -15,8 +14,7 @@ class App extends Component {
     render() {
         return (
             <Provider store={store}>
-                <Language />
-                <TestComponent />
+                <AppRouter />
             </Provider>
         );
     }
