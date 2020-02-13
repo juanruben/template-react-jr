@@ -43,7 +43,7 @@ export function validateRut(rutValue) {
         let factor = 2;
         let suma = 0;
         let dv;
-        for (let i = (elRut.length - 1); i >= 0; i--) {
+        for (let i = (elRut.length - 1); i >= 0; i -= 1) {
             factor = factor > 7 ? 2 : factor;
             suma += parseInt(elRut[i]) * parseInt(factor++);
         }
