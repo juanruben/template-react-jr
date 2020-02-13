@@ -5,6 +5,13 @@ const reducer = combineReducers({
     currentLanguage,
 });
 
-const store = createStore(reducer);
+const globalState = localStorage.getItem('GLOBAL_STATE');
+const initialState = globalState ? JSON.parse(globalState) : undefined;
+const store = createStore(reducer, initialState);
+
+
+export const saveState = () => {
+    localStorage.setItem('GLOBAL_STATE', JSON.stringify(store.getState()));
+};
 
 export default store;
