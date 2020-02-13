@@ -2,7 +2,6 @@
 
 exports[`App should render correctly 1`] = `
 "<Provider store={{...}}>
-  <Connect(Language) />
-  <TranslatedComponet />
+  <AppRouter />
 </Provider>"
 `;
